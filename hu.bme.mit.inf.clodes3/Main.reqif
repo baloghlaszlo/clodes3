@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REQ-IF xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd" xmlns:configuration="http://eclipse.org/rmf/pror/toolextensions/1.0">
+  <THE-HEADER>
+    <REQ-IF-HEADER IDENTIFIER="_Nub1MaG_Eea8XKpYqQRn0w">
+      <COMMENT>Created by: Balogh Laszlo</COMMENT>
+      <CREATION-TIME>2016-11-03T13:15:31.316+01:00</CREATION-TIME>
+      <REQ-IF-TOOL-ID>fmStudio (http://formalmind.com/studio)</REQ-IF-TOOL-ID>
+      <REQ-IF-VERSION>1.0</REQ-IF-VERSION>
+      <SOURCE-TOOL-ID>ProR (http://pror.org)</SOURCE-TOOL-ID>
+      <TITLE>Cloud Based Demonstrator for Smell Sensing Systems</TITLE>
+    </REQ-IF-HEADER>
+  </THE-HEADER>
+  <CORE-CONTENT>
+    <REQ-IF-CONTENT>
+      <DATATYPES>
+        <DATATYPE-DEFINITION-STRING IDENTIFIER="_Nub1M6G_Eea8XKpYqQRn0w" LAST-CHANGE="2016-11-03T13:15:31.316+01:00" LONG-NAME="T_String32k" MAX-LENGTH="32000"/>
+      </DATATYPES>
+      <SPEC-TYPES>
+        <SPEC-OBJECT-TYPE IDENTIFIER="_Nub1NKG_Eea8XKpYqQRn0w" LAST-CHANGE="2016-11-03T13:15:31.316+01:00" LONG-NAME="Requirement Type">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_Nub1NaG_Eea8XKpYqQRn0w" LAST-CHANGE="2016-11-03T13:15:31.316+01:00" LONG-NAME="Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_Nub1M6G_Eea8XKpYqQRn0w</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+          </SPEC-ATTRIBUTES>
+        </SPEC-OBJECT-TYPE>
+        <SPECIFICATION-TYPE IDENTIFIER="_Nub1NqG_Eea8XKpYqQRn0w" LAST-CHANGE="2016-11-03T13:15:31.316+01:00" LONG-NAME="Specification Type">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_Nub1N6G_Eea8XKpYqQRn0w" LAST-CHANGE="2016-11-03T13:15:31.316+01:00" LONG-NAME="Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_Nub1M6G_Eea8XKpYqQRn0w</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+          </SPEC-ATTRIBUTES>
+        </SPECIFICATION-TYPE>
+      </SPEC-TYPES>
+      <SPEC-OBJECTS>
+        <SPEC-OBJECT IDENTIFIER="_o30LYKHBEea8XKpYqQRn0w" LAST-CHANGE="2016-11-03T13:32:20.003+01:00">
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_UjixMKHSEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:32:16.145+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Ideálisabb légköri körülményekkel javítsunk a teremben végzett munkavégzés minőségén.">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_U02RsKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:46:35.693+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Hibatűrőnek kell lennie a rendszernek">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_ccvQIKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:49:12.434+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="A légkör minőségét meg kell tudni jósolni">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_sKBBUKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:49:02.950+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Be kell tudni avatkozni, ha nem jó a légkör">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_vQnl4KHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:49:29.577+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Légkör minőségét monitorozni kell">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_xsoVUKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:49:39.652+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Internetes időjárás-szolgáltatást kell használni az időjárási körülmények felméréséhez">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_0nT9wKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:50:07.988+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Szenzorokat kell telepíteni, a légköri körülmények monitorozásához">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_5ZM_cKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:50:50.874+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Több szenzornak kell lennie">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_9NLnYKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:51:05.518+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Tudni kell a terem foglaltságát a légköri körülmények jóslásához">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_ARbbgKHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:51:10.898+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Unix szolgáltatásokat kell telepíteni a laborgépekre, hogy lássuk hány működik">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_CsYbAKHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:51:31.737+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Kamerával kell megfigyelni a termet, hogy lássuk, hogy hány hallgató van jelen">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_FqGwYKHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:51:50.863+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Órarendi adatokból következtethetünk arra, hogy mekkora a foglaltság">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_LGh80KHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:52:26.405+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Emberi közbeavatkozással lehetővé kell tenni a kellemetlen légkör jelzését">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_OQD5kKHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:52:44.973+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Le kell helyezni egy fizikai gombot">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_P2Wh8KHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:53:04.902+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Webes felületen lehessen jelezni a kellemetlen légköri körülményeket">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1NaG_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_Nub1NKG_Eea8XKpYqQRn0w</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+      </SPEC-OBJECTS>
+      <SPECIFICATIONS>
+        <SPECIFICATION IDENTIFIER="_NuccQqG_Eea8XKpYqQRn0w" LAST-CHANGE="2016-11-03T13:15:31.316+01:00" LONG-NAME="Specification Document">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Requirements Document">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_Nub1N6G_Eea8XKpYqQRn0w</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPECIFICATION-TYPE-REF>_Nub1NqG_Eea8XKpYqQRn0w</SPECIFICATION-TYPE-REF>
+          </TYPE>
+          <CHILDREN>
+            <SPEC-HIERARCHY IDENTIFIER="_UkDHgKHSEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:32:16.145+01:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_UjixMKHSEeac8KO93Obyzw</SPEC-OBJECT-REF>
+              </OBJECT>
+              <CHILDREN>
+                <SPEC-HIERARCHY IDENTIFIER="_cdQNgKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:47:20.228+01:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_ccvQIKHUEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                  </OBJECT>
+                  <CHILDREN>
+                    <SPEC-HIERARCHY IDENTIFIER="_vRKYcKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:49:29.577+01:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_vQnl4KHUEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                      </OBJECT>
+                      <CHILDREN>
+                        <SPEC-HIERARCHY IDENTIFIER="_xtJSsKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:49:39.652+01:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_xsoVUKHUEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                          </OBJECT>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_0n0UEKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:50:07.988+01:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_0nT9wKHUEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                          </OBJECT>
+                          <CHILDREN>
+                            <SPEC-HIERARCHY IDENTIFIER="_5ZvyAKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:50:13.672+01:00">
+                              <OBJECT>
+                                <SPEC-OBJECT-REF>_5ZM_cKHUEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                              </OBJECT>
+                            </SPEC-HIERARCHY>
+                          </CHILDREN>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_LHJA0KHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:52:26.405+01:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_LGh80KHVEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                          </OBJECT>
+                          <CHILDREN>
+                            <SPEC-HIERARCHY IDENTIFIER="_OQohUKHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:52:44.973+01:00">
+                              <OBJECT>
+                                <SPEC-OBJECT-REF>_OQD5kKHVEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                              </OBJECT>
+                            </SPEC-HIERARCHY>
+                            <SPEC-HIERARCHY IDENTIFIER="_P22RMKHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:53:04.902+01:00">
+                              <OBJECT>
+                                <SPEC-OBJECT-REF>_P2Wh8KHVEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                              </OBJECT>
+                            </SPEC-HIERARCHY>
+                          </CHILDREN>
+                        </SPEC-HIERARCHY>
+                      </CHILDREN>
+                    </SPEC-HIERARCHY>
+                    <SPEC-HIERARCHY IDENTIFIER="_9NqvkKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:51:05.518+01:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_9NLnYKHUEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                      </OBJECT>
+                      <CHILDREN>
+                        <SPEC-HIERARCHY IDENTIFIER="_AR-OEKHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:51:10.898+01:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_ARbbgKHVEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                          </OBJECT>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_Cs5_cKHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:51:31.737+01:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_CsYbAKHVEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                          </OBJECT>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_FqmfoKHVEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:51:50.863+01:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_FqGwYKHVEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                          </OBJECT>
+                        </SPEC-HIERARCHY>
+                      </CHILDREN>
+                    </SPEC-HIERARCHY>
+                  </CHILDREN>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_sKlpEKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:49:02.950+01:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_sKBBUKHUEeac8KO93Obyzw</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+              </CHILDREN>
+            </SPEC-HIERARCHY>
+            <SPEC-HIERARCHY IDENTIFIER="_U1YdMKHUEeac8KO93Obyzw" LAST-CHANGE="2016-11-03T15:46:35.693+01:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_U02RsKHUEeac8KO93Obyzw</SPEC-OBJECT-REF>
+              </OBJECT>
+            </SPEC-HIERARCHY>
+          </CHILDREN>
+        </SPECIFICATION>
+      </SPECIFICATIONS>
+    </REQ-IF-CONTENT>
+  </CORE-CONTENT>
+  <TOOL-EXTENSIONS>
+    <REQ-IF-TOOL-EXTENSION>
+      <configuration:ProrToolExtension>
+        <configuration:specViewConfigurations>
+          <configuration:ProrSpecViewConfiguration specification="_NuccQqG_Eea8XKpYqQRn0w">
+            <configuration:columns>
+              <configuration:Column label="Description" width="841"/>
+            </configuration:columns>
+            <configuration:leftHeaderColumn>
+              <configuration:Column label="Lead Header Column" width="111"/>
+            </configuration:leftHeaderColumn>
+          </configuration:ProrSpecViewConfiguration>
+        </configuration:specViewConfigurations>
+        <configuration:generalConfiguration>
+          <configuration:ProrGeneralConfiguration>
+            <configuration:labelConfiguration>
+              <configuration:LabelConfiguration>
+                <defaultLabel>Description</defaultLabel>
+              </configuration:LabelConfiguration>
+            </configuration:labelConfiguration>
+          </configuration:ProrGeneralConfiguration>
+        </configuration:generalConfiguration>
+      </configuration:ProrToolExtension>
+    </REQ-IF-TOOL-EXTENSION>
+  </TOOL-EXTENSIONS>
+</REQ-IF>
