@@ -4,10 +4,8 @@
   "description": "",
   "main": "''",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch": "webpack -w",
-    "start": "python traindata_server.py"
+    "start-dev": "webpack-dev-server --display-error-details --progress --inline --colors --hot --host 0.0.0.0"
   },
   "dependencies": {
     "material-ui": "^0.16.1",
@@ -26,6 +24,9 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-1": "^6.16.0",
     "babel-runtime": "^6.11.6",
-    "webpack": "^1.13.3"
+    "html-webpack-plugin": "^2.24.1",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }

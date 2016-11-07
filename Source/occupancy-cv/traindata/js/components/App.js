@@ -47,7 +47,7 @@ class App extends React.Component {
                         title='Face Detector Training'
                         onLeftIconButtonTouchTap={this._handleOpenDrawer.bind(this)}
                     />
-                    <div style={{margin: '32px auto 0 auto', padding: 32, maxWidth: '800px'}}>
+                    <div style={{height: 'calc(100vh - 64px)', overflow: 'hidden'}}>
                         {this.props.children}
                     </div>
                 </div>

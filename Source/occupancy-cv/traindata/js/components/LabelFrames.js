@@ -46,31 +46,61 @@ export default class LabelFrames extends React.Component {
 
     render() {
         return (
-            <div style={{textAlign: 'center'}}>
-                <div>
-                    <img src="static/img.png" style={{width: '100%'}} className='paper-image'/>
+            <div style={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+            }}>
+                <div style={{
+                    display: 'flex',
+                    flexGrow: 0,
+                    flexShrink: 1,
+                    padding: 16,
+                    boxSizing: 'border-box'
+                }}>
+                    <div>
+                        <img src="static/img.png" style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'contain',
+                            filter: 'drop-shadow(0px 3px 10px rgba(0,0,0,.39))',
+                        }}/>
+                    </div>
                 </div>
-                <p style={{marginTop: 48}}>
-                    How many people are on this picture?
-                </p>
-                <div>
-                    <TextField
-                        id='countField'
-                        ref='countField'
-                        style={{maxWidth: 180}}
-                        value={this.state.value}
-                        onChange={this._textFieldValueChange}
-                        onKeyPress={this._textFieldKeyPress}
-                        errorText={this.state.valid ? null : 'Please enter a valid number'}
-                    />
-                    <IconButton
-                        tooltip='Submit Label'
-                        style={{verticalAlign: 'top'}}
-                        disabled={!this.state.canSubmit}
-                        onTouchTap={this._submit}
-                    >
-                        <ContentSend/>
-                    </IconButton>
+                <div style={{
+                    flexShrink: 0,
+                    minHeight: '8em',
+
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-start',
+                    alignItems: 'center',
+                }}>
+                    <p>
+                        How many people are on this picture?
+                    </p>
+                    <div>
+                        <TextField
+                            id='countField'
+                            ref='countField'
+                            style={{maxWidth: 180}}
+                            value={this.state.value}
+                            type="tel"
+                            onChange={this._textFieldValueChange}
+                            onKeyPress={this._textFieldKeyPress}
+                            errorText={this.state.valid ? null : 'Please enter a valid number'}
+                        />
+                        <IconButton
+                            tooltip='Submit Label'
+                            style={{verticalAlign: 'top'}}
+                            disabled={!this.state.canSubmit}
+                            onTouchTap={this._submit}
+                        >
+                            <ContentSend/>
+                        </IconButton>
+                    </div>
                 </div>
             </div>
         );
