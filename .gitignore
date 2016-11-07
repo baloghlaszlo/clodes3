@@ -16,8 +16,8 @@
 
 # IDEA
 # ----
-.idea
-.shelf
+**/.idea
+**/.shelf
 **/*.iml
 **/*.ipr
 **/*.iws
@@ -61,7 +61,7 @@ atlassian-ide-plugin.xml
 
 # Textmate
 # --------
-.textmate
+**/.textmate
 
 # Sublime Text
 # ------------
@@ -69,15 +69,15 @@ atlassian-ide-plugin.xml
 
 # jEnv
 # ----
-.java-version
+**/.java-version
 
 # OS X
 # ----
-.DS_Store
+**/.DS_Store
 
 # HPROF
 # -----
-*.hprof
+**/*.hprof
 
 # Work dirs
 # ---------
