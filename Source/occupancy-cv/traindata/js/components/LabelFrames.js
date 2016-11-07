@@ -2,6 +2,8 @@ import React from 'react';
 import IconButton from 'material-ui/IconButton';
 import ContentSend from 'material-ui/svg-icons/content/send';
 import TextField from 'material-ui/TextField';
+import Snackbar from 'material-ui/Snackbar';
+import Paper from 'material-ui/Paper';
 
 const _initialState = {canSubmit: false, valid: true, value: ''};
 
@@ -29,8 +31,7 @@ export default class LabelFrames extends React.Component {
 
     _submit = () => {
         if (this.state.canSubmit) {
-            alert(this.state.label);
-            this.setState(_initialState);
+            this.setState({confirmationOpen: true});
         }
     };
 
@@ -50,37 +51,30 @@ export default class LabelFrames extends React.Component {
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'flex-end',
+                justifyContent: 'center',
                 alignItems: 'center',
             }}>
-                <div style={{
+                <Paper zDepth={3} style={{
+                    height: '75%',
                     display: 'flex',
-                    flexGrow: 0,
-                    flexShrink: 1,
-                    padding: 16,
-                    boxSizing: 'border-box'
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '25px',
                 }}>
-                    <div>
-                        <img src="static/img.png" style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'contain',
-                            filter: 'drop-shadow(0px 3px 10px rgba(0,0,0,.39))',
-                        }}/>
-                    </div>
-                </div>
+                    <img src="static/img.jpg" style={{
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain',
+                    }}/>
+                </Paper>
                 <div style={{
-                    flexShrink: 0,
-                    minHeight: '8em',
-
+                    height: '20%',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'flex-start',
+                    justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                    <p>
-                        How many people are on this picture?
-                    </p>
+                    <p>How many people are on this picture?</p>
                     <div>
                         <TextField
                             id='countField'
@@ -93,7 +87,6 @@ export default class LabelFrames extends React.Component {
                             errorText={this.state.valid ? null : 'Please enter a valid number'}
                         />
                         <IconButton
-                            tooltip='Submit Label'
                             style={{verticalAlign: 'top'}}
                             disabled={!this.state.canSubmit}
                             onTouchTap={this._submit}
@@ -102,6 +95,12 @@ export default class LabelFrames extends React.Component {
                         </IconButton>
                     </div>
                 </div>
+                <Snackbar
+                    open={this.state.confirmationOpen}
+                    message="Thank you for your cooperation"
+                    autoHideDuration={4000}
+                    onRequestClose={this.handleRequestClose}
+                />
             </div>
         );
     }

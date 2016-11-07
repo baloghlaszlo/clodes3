@@ -85,21 +85,11 @@
       <file leaf-file-name="LabelFrames.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/traindata/js/components/LabelFrames.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="87" column="28" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="51" />
+            <state relative-caret-position="154">
+              <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".babelrc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/traindata/.babelrc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -129,7 +119,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-              <folding />
+              <folding>
+                <marker date="1478540432000" expanded="true" signature="110:251" ph="{&quot;build&quot;: &quot;webpack&quot;...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1093,12 +1085,12 @@
       <workItem from="1478299732771" duration="14129000" />
       <workItem from="1478434835942" duration="2877000" />
       <workItem from="1478523698818" duration="1746000" />
-      <workItem from="1478526484032" duration="10232000" />
+      <workItem from="1478526484032" duration="13769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33739000" />
+    <option name="totallyTimeSpent" value="37276000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="832" extended-state="6" />
@@ -1213,7 +1205,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding />
+          <folding>
+            <marker date="1478540432000" expanded="true" signature="110:251" ph="{&quot;build&quot;: &quot;webpack&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1230,7 +1224,7 @@
         <state relative-caret-position="252">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1311,7 +1305,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding />
+          <folding>
+            <marker date="1478540432000" expanded="true" signature="110:251" ph="{&quot;build&quot;: &quot;webpack&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1350,7 +1346,7 @@
         <state relative-caret-position="18">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1402,17 +1398,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/traindata/static/img.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/traindata/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1481,7 +1472,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding />
+          <folding>
+            <marker date="1478540432000" expanded="true" signature="110:251" ph="{&quot;build&quot;: &quot;webpack&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1503,10 +1496,15 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/traindata/static/img.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/traindata/js/components/LabelFrames.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="87" column="28" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="51" />
+        <state relative-caret-position="154">
+          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
