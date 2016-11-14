@@ -28,21 +28,20 @@ int main() {
     detectors.emplace_back(cv::CascadeClassifier("cascade/haarcascade_profileface.xml"));
     //detectors.emplace_back(cv::CascadeClassifier("cascade/haarcascade_righteye_2splits.xml"));
     //detectors.emplace_back(cv::CascadeClassifier("cascade/haarcascade_smile.xml"));
-    detectors.emplace_back(cv::CascadeClassifier("cascade/haarcascade_upperbody.xml"));
-    detectors.emplace_back(cv::CascadeClassifier("cascade/lbpcascade_profileface.xml"));
+    //detectors.emplace_back(cv::CascadeClassifier("cascade/haarcascade_upperbody.xml"));
+    //detectors.emplace_back(cv::CascadeClassifier("cascade/lbpcascade_profileface.xml"));
+    //detectors.emplace_back(cv::CascadeClassifier("cascade/lbpcascade_frontalface.xml"));
 
-    //cv::VideoCapture vid("test/foo.jpg");
-    //if (!vid.isOpened()) {
-    //    std::cout << "VideoCapture is not opened" << std::endl;
-    //    return -1;
-    //}
+    cv::VideoCapture vid("rtsp://192.168.1.105:8554/unicast");
+    if (!vid.isOpened()) {
+        std::cout << "VideoCapture is not opened" << std::endl;
+        return -1;
+    }
 
     //for (int i = 0; i < 5; ++i) vid.grab();
 
-    cv::Mat frame = cv::imread("test/foo2.jpg");
-    //cv::resize(frame, frame, cv::Size(), 0.5, 0.5);
-
-    //while(vid.read(frame)) {
+    cv::Mat frame;
+    while(vid.read(frame)) {
         cv::Mat gray;
         cv::cvtColor(frame, gray, cv::COLOR_BGR2GRAY);
         cv::equalizeHist(gray, gray);
@@ -52,7 +51,7 @@ int main() {
 
         for(auto& detector : detectors) {
             std::vector<cv::Rect> objects;
-            detector.detectMultiScale(gray, objects, 1.1, 1);
+            detector.detectMultiScale(gray, objects, 1.4, 1);
 
             cv::Scalar color(ud(r), ud(r), ud(r));
             for (auto& rect : objects) {
@@ -61,8 +60,8 @@ int main() {
         }
 
         cv::imshow("test", frame);
-        cv::waitKey(0);
-    //}
+        cv::waitKey(1);
+    }
 }
 
 //int main() {

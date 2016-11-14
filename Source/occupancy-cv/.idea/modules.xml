@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/cv-backend/cv-backend.iml" filepath="$PROJECT_DIR$/cv-backend/cv-backend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cv-frontend/cv-frontend.iml" filepath="$PROJECT_DIR$/cv-frontend/cv-frontend.iml" />
-    </modules>
-  </component>
-</project>
