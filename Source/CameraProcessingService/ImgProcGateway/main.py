@@ -9,7 +9,7 @@ api = Api(app)
 
 connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
 channel = connection.channel()
-channel.queue_bind(exchange='ImgProcNodeFanout', queue="ImgProcNode", type=)
+channel.queue_bind(exchange='ImgProcNodeFanout', queue="ImgProcNode")
 
 class Frame(Resource):
     def post(self):
