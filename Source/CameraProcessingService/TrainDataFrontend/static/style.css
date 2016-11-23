@@ -12,7 +12,3 @@ h1 {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.54);
 }
-
-.paper-image {
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.39);
-}

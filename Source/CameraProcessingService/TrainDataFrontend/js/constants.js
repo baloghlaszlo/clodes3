@@ -1,0 +1,18 @@
+
+export const RANDOM_RECT_ENDPOINT = '/api/rects/random';
+
+export const RANDOM_FRAME_ENDPOINT = '/api/frames/random';
+
+export const LABELER_OPENED = 'LABELED_OPENED';
+
+export const LABELER_CLOSED = 'LABELER_CLOSED';
+
+export const IMAGE_DATA_LOADED = 'IMAGE_DATA_LOADED';
+
+export const IMAGE_DATA_INVALIDATED = 'IMAGE_DATA_INVALIDATED';
+
+export const LABEL_SUBMITTED = 'LABEL_SUBMITTED';
+
+export const NEW_IMAGE_ENDPOINT_UPDATED = 'NEW_IMAGE_ENDPOINT_UPDATED';
+
+export const IMAGE_RELOAD_REQUESTED = 'IMAGE_RELOAD_REQUESTED';
