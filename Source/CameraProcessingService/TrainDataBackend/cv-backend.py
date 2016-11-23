@@ -1,10 +1,15 @@
 import flask
 from flask import Flask
 from flask_restful import Api, Resource
+from pymongo import MongoClient
 
 app = Flask(__name__)
 api = Api(app)
 
+
+# Connect to bigMongo
+client = MongoClient('mongodb://clodes3:TopCPSKek@baprof.net/clodes3')
+collection = client['clodes3']['images']
 
 class Frame(Resource):
     def post(self):
