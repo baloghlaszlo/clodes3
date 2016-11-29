@@ -1,7 +1,11 @@
 import os
+import io
+
+import time
 import pika
 import json
 import uuid
+
 from bson import BSON
 from werkzeug.datastructures import FileStorage
 from flask import Flask, redirect
@@ -17,21 +21,28 @@ else:
 connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
 channel = connection.channel()
 channel.queue_declare(queue='image.new', durable=True)
-channel.queue_bind(exchange='amq.topic', queue="image.new")
+
+# -----------------------------------------------------------------------------
 
 class Frame(Resource):
     def post(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('timestamp', type=int)
+        parser.add_argument('camera_id', type=int)
+        parser.add_argument('camera_timestamp', type=int)
         parser.add_argument('picture', required=True, type=FileStorage, location='files')
         args = parser.parse_args()
 
+        args['picture'].read()
+
         msg = {
             'id': str(uuid.uuid1()),
-            'timestamp': args['timestamp'],
-            'picture': args['picture'].read()
+            'camera_id': args['camera_id'],
+            'camera_timestamp': args['camera_timestamp'],
+            'picture': io.BytesIO(args['picture'].read()),
+            'receive_timestamp': int(time.time())
         }
-        channel.basic_publish(routing_key='image.new', body=BSON.encode(msg))
+        #print(msg)
+        channel.basic_publish(routing_key='image.new', exchange='amq.topic', body=BSON.encode(msg))
 
 
 app = Flask('ImgProcGateway')
@@ -45,6 +56,6 @@ if __name__ == '__main__':
         HOST = str(os.getenv('VCAP_APP_HOST'))
     else:
         PORT = 8080
-        HOST = 'localhost'
+        HOST = '0.0.0.0'
     print('Starting flask service on {}:{}'.format(HOST, PORT))
     app.run(host=HOST, port=PORT, debug=True)

@@ -22,6 +22,12 @@ channel = connection.channel()
 channel.queue_declare(queue='image.new', durable=True)
 channel.queue_bind(exchange='amq.topic', queue="image.new")
 
+# -----------------------------------------------------------------------------
+
+# CODE GOES HERE
+
+# -----------------------------------------------------------------------------
+
 if __name__ == '__main__':
     if 'VCAP_SERVICES' in os.environ:
         # Service is running in clud
