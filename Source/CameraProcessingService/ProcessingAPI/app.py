@@ -4,7 +4,7 @@ import json
 import uuid
 from bson import BSON
 from werkzeug.datastructures import FileStorage
-from flask import Flask, redirect
+from flask import Flask
 from flask_restful import Api, Resource, reqparse
 
 if 'VCAP_SERVICES' in os.environ:
@@ -16,8 +16,6 @@ else:
 # Connect to RabbitMQ
 connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
 channel = connection.channel()
-channel.queue_declare(queue='image.new', durable=True)
-channel.queue_bind(exchange='amq.topic', queue="image.new")
 
 class Frame(Resource):
     def post(self):
