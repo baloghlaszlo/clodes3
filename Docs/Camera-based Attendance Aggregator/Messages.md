@@ -71,7 +71,7 @@ rects.new.{feature_name}
 }
 ```
 
-rects.calssify.done.{feature_name}
+rects.classify.done.{feature_name}
 ----------------------------------
 
 The *cnn processor* send this message to the *frame concentrator*.
