@@ -7,6 +7,7 @@ import uuid
 import cv2
 import numpy as np
 
+from bson import Int64
 from bson import BSON
 import pika
 
@@ -17,82 +18,76 @@ else:
     rabbitCred = {'uri': 'amqp://localhost'}
 
 if 'HAAR_CASCADE' in os.environ:
-    cascadeName = os.environ['HAAR_CASCADE']
-    cascadePath = 'cascade/{}.xml'.format(cascadeName)
-    if not os.path.isfile(cascadePath):
-        raise FileNotFoundError('Cascade {} definition xml is not found'.format(cascadeName))
+    cascade_name = os.environ['HAAR_CASCADE']
+    cascade_path = 'cascade/{}.xml'.format(cascade_name)
+    if not os.path.isfile(cascade_path):
+        raise FileNotFoundError('Cascade {} definition xml is not found'.format(cascade_name))
 else:
     raise EnvironmentError('Environmental variable HAAR_CASCADE is not defined')
 
 # Connect to RabbitMQ
 connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
 channel = connection.channel()
-queue_name = 'image.find_rects.done.{}'.format(cascadeName)
-channel.queue_declare(queue=queue_name, durable=True)
-channel.queue_bind(exchange='amq.topic', queue="image.new")
+input_topic_name = 'image.find_rects.new'
+input_queue_name = 'image_processor.{}.{}'.format(input_topic_name, cascade_name)
+channel.queue_declare(queue=input_queue_name)
+channel.queue_bind(exchange='amq.topic', queue=input_queue_name, routing_key=input_topic_name)
+
+output_topic_name = 'image.find_rects.done.{}'.format(cascade_name)
 
 # -----------------------------------------------------------------------------
 
-detector = cv2.CascadeClassifier(cascadePath)
+detector = cv2.CascadeClassifier(cascade_path)
 
 def findRects(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     equalized = cv2.equalizeHist(gray)
 
-    # cv2.imshow('test', equalized)
-    # cv2.waitKey(0)
+    #cv2.imshow('test', equalized)
+    #cv2.waitKey(1)
 
     rects = detector.detectMultiScale(image, scaleFactor=1.1, minNeighbors=1)
-    print(len(rects))
-
     processedRects = []
     for (x, y, w, h) in rects:
-        print((x, y, w, h))
         cropped = image[y:(y+64), x:(x+64)]
         (ret, croppedJpg) = cv2.imencode('.jpg', cropped)
 
         processedRect = {
-            'x': x,
-            'y': y,
-            'width': w,
-            'height': h,
-            'payload': croppedJpg.tostring()
+            'x': Int64(x),
+            'y': Int64(y),
+            'width': Int64(w),
+            'height': Int64(h),
+            'payload': croppedJpg.tobytes()
         }
-        print(processedRect)
         processedRects.append(processedRect)
-
     return processedRects
 
 def newImageCallback(channel, method, properties, body):
     decoded = BSON.decode(body)
-    print(decoded)
+    print(decoded.keys())
 
-    image = cv2.imdecode(np.frombuffer(bytes(decoded['picture'])), flags=cv2.IMREAD_COLOR)
-    print(image)
-    cv2.imshow('test', image)
-    cv2.waitKey()
+    image = cv2.imdecode(np.fromstring(decoded['image'], dtype=np.uint8), flags=cv2.IMREAD_COLOR)
     rects = findRects(image)
+    print("Frame id {} processed, {} rects found".format(decoded['id'], len(rects)))
 
     msg = {
-        'id': body['id'],
-        'feature_name': cascadeName,
+        'id': decoded['id'],
+        'feature_name': cascade_name,
         'rects_found': rects
     }
+    channel.basic_publish(routing_key=output_topic_name, exchange='amq.topic', body=BSON.encode(msg))
+    channel.basic_ack(delivery_tag = method.delivery_tag)
 
-    channel.basic_publish(routing_key=queue_name, body=BSON.encode(msg))
-
-pass
-
-channel.basic_consume(newImageCallback, queue='image.new')
-print('Consuming on {}'.format(queue_name))
+channel.basic_consume(newImageCallback, queue=input_queue_name)
+print('Consuming on {}'.format(input_queue_name))
 
 # -----------------------------------------------------------------------------
 
-class TestImageProcessor(unittest.TestCase):
-    def test_processImage(self):
-        image = cv2.imread('test/bar.png')
-        findRects(image)
-        pass
+#class TestImageProcessor(unittest.TestCase):
+#    def test_processImage(self):
+#        image = cv2.imread('test/bar.png')
+#        findRects(image)
+#        pass
 
 
 # -----------------------------------------------------------------------------

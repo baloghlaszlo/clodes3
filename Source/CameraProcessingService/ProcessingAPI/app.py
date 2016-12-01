@@ -20,30 +20,28 @@ else:
 # Connect to RabbitMQ
 connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
 channel = connection.channel()
-channel.queue_declare(queue='image.new', durable=True)
 
 # -----------------------------------------------------------------------------
 
 class Frame(Resource):
     def post(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('camera_id', type=int)
-        parser.add_argument('camera_timestamp', type=int)
+        parser.add_argument('camera_id', required=True, type=int, location='form')
+        parser.add_argument('camera_timestamp', required=True, type=int, location='form')
         parser.add_argument('picture', required=True, type=FileStorage, location='files')
         args = parser.parse_args()
 
-        args['picture'].read()
+        image = args['picture'].read()
 
         msg = {
             'id': str(uuid.uuid1()),
             'camera_id': args['camera_id'],
             'camera_timestamp': args['camera_timestamp'],
-            'picture': io.BytesIO(args['picture'].read()),
-            'receive_timestamp': int(time.time())
+            'receive_timestamp': int(time.time()),
+            'image': bytes(image),
         }
-        #print(msg)
+        print('Camera id: {}, camera timestamp: {}'.format(args['camera_id'], args['camera_timestamp']))
         channel.basic_publish(routing_key='image.new', exchange='amq.topic', body=BSON.encode(msg))
-
 
 app = Flask('ImgProcGateway')
 api = Api(app)
