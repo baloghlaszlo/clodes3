@@ -147,6 +147,12 @@ subscribe_to_topic(channel, 'image.new', on_new_image)
 subscribe_to_topic(channel, 'image.find_rects.done.*', on_find_rects_done)
 subscribe_to_topic(channel, 'rects.done.*', on_rects_done)
 
+# -----------------------------------------------------------------------------
+
+# CODE GOES HERE
+
+# -----------------------------------------------------------------------------
+
 if __name__ == '__main__':
     print('Starting to synchronously consume messages')
     try:
