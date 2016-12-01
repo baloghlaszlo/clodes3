@@ -19,8 +19,8 @@ else:
 # Connect to Mongo
 client = MongoClient(mongoCred['uri'])
 collection = client['clodes3_frame_concentrator']['frames']
-collection.create_index({'id': 1}, unique=True)
-collection.create_index({'rects_pending.id': 1}, unique=True)
+collection.create_index('id', unique=True)
+collection.create_index('rects_pending.id', unique=True)
 
 
 def dict_filter(d, keys):
@@ -98,7 +98,7 @@ def on_find_rects_done(ch, method_frame, header_frame, body):
         handle_pipeline_completed(ch, frame_id)
     elif updated is not None:  # Only send rects to CNN processor if the feature was pending (at-least-once).
         for msg in rects_to_send:
-            ch.basic_publish(routing_key='reacts.new.' + msg['feature_name'], body=BSON.encode(msg))
+            ch.basic_publish(routing_key='rects.new.' + msg['feature_name'], body=BSON.encode(msg))
 
     ch.basic_ack(delivery_tag=method_frame.delivery_tag)
 
