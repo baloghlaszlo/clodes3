@@ -5,6 +5,7 @@ import uuid
 import pika
 from bson import BSON
 from pymongo import MongoClient, ReturnDocument
+from pymongo.errors import DuplicateKeyError
 
 if 'FEATURES' in os.environ:
     features = os.environ['FEATURES'].split(':')
@@ -40,10 +41,12 @@ def on_new_image(ch, method_frame, header_frame, body):
     document['rects_pending'] = []
     document['faces_found'] = []
 
-    collection.insert(document)
-
-    find_rects_new = dict_filter(new_image, ['id', 'image'])
-    ch.basic_publish(routing_key='image.find_rects.new', exchange='amq.topic', body=BSON.encode(find_rects_new))
+    try:
+        collection.insert(document)
+        find_rects_new = dict_filter(new_image, ['id', 'image'])
+        ch.basic_publish(routing_key='image.find_rects.new', exchange='amq.topic', body=BSON.encode(find_rects_new))
+    except DuplicateKeyError:
+        pass
     ch.basic_ack(delivery_tag=method_frame.delivery_tag)
 
 

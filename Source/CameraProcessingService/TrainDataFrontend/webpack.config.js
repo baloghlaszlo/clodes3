@@ -6,7 +6,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/api': {
-                target: 'https://other-server.example.com',
+                target: 'http://localhost:8889',
                 secure: false
             }
         },
@@ -15,7 +15,7 @@ module.exports = {
     //devtool: "#source-map",
     devtool: "eval",
     entry: [
-        'webpack-dev-server/client?http://localhost:8080',
+        'webpack-dev-server/client?http://localhost:8888',
         'webpack/hot/only-dev-server',
         './js/app.js'
     ],

@@ -56,14 +56,14 @@ def findRects(image):
         # cv2.imshow("", resized)
         # cv2.waitKey(0)
 
-        (ret, croppedJpg) = cv2.imencode('.jpg', cropped)
+        (ret, resizedJpg) = cv2.imencode('.jpg', resized)
 
         processedRect = {
             'x': Int64(x),
             'y': Int64(y),
             'width': Int64(w),
             'height': Int64(h),
-            'payload': croppedJpg.tobytes()
+            'payload': resizedJpg.tobytes()
         }
         processedRects.append(processedRect)
     return processedRects
