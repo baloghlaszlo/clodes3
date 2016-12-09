@@ -30,7 +30,7 @@ connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
 channel = connection.channel()
 input_topic_name = 'image.find_rects.new'
 input_queue_name = 'image_processor.{}.{}'.format(input_topic_name, cascade_name)
-channel.queue_declare(queue=input_queue_name)
+channel.queue_declare(queue=input_queue_name, arguments={'x-message-ttl': 60000})
 channel.queue_bind(exchange='amq.topic', queue=input_queue_name, routing_key=input_topic_name)
 
 output_topic_name = 'image.find_rects.done.{}'.format(cascade_name)

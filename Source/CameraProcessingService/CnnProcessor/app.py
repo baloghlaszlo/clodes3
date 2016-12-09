@@ -17,7 +17,7 @@ connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
 channel = connection.channel()
 input_topic_name = 'rects.new.*'
 input_queue_name = 'cnn_processor.{}'.format(input_topic_name)
-channel.queue_declare(queue=input_queue_name)
+channel.queue_declare(queue=input_queue_name, arguments={'x-message-ttl': 60000})
 channel.queue_bind(exchange='amq.topic', queue=input_queue_name, routing_key=input_topic_name)
 
 # -----------------------------------------------------------------------------

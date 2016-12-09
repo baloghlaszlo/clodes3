@@ -42,7 +42,7 @@ def on_new_image(ch, method_frame, header_frame, body):
 
 
 
-    
+
     collection.insert(document)
 
     find_rects_new = dict_filter(new_image, ['id', 'image'])
@@ -142,7 +142,7 @@ def on_rects_done(ch, method_frame, header_frame, body):
 
 def subscribe_to_topic(ch, topic, callback):
     queue = "frame_concentrator.{}".format(topic)
-    ch.queue_declare(queue=queue)
+    ch.queue_declare(queue=queue, arguments={'x-message-ttl': 60000})
     ch.queue_bind(exchange='amq.topic', queue=queue, routing_key=topic)
     ch.basic_consume(consumer_callback=callback, queue=queue)
 
