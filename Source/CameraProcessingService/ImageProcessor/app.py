@@ -1,15 +1,11 @@
-import unittest
-
 import json
 import os
-import uuid
 
 import cv2
 import numpy as np
-
-from bson import Int64
-from bson import BSON
 import pika
+from bson import BSON
+from bson import Int64
 
 if 'VCAP_SERVICES' in os.environ:
     rabbitInfo = json.loads(os.environ['VCAP_SERVICES'])['compose-for-rabbitmq'][0]
@@ -39,17 +35,27 @@ output_topic_name = 'image.find_rects.done.{}'.format(cascade_name)
 
 detector = cv2.CascadeClassifier(cascade_path)
 
+
 def findRects(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     equalized = cv2.equalizeHist(gray)
 
-    #cv2.imshow('test', equalized)
-    #cv2.waitKey(1)
-
-    rects = detector.detectMultiScale(image, scaleFactor=1.1, minNeighbors=1)
+    rects = detector.detectMultiScale(equalized, scaleFactor=1.1, minNeighbors=1)
     processedRects = []
     for (x, y, w, h) in rects:
-        cropped = image[y:(y+64), x:(x+64)]
+        cropped = image[y:(y+h), x:(x+w)]
+        longest_side = max(w, h)
+        mat = np.zeros((2, 3), np.float32)
+        max_size = 64
+        scale = max_size / longest_side
+        mat[0, 0] = mat[1, 1] = scale
+        mat[0, 2] = (max_size - w * scale) / 2
+        mat[1, 2] = (max_size - h * scale) / 2
+        resized = cv2.warpAffine(cropped, mat, (max_size, max_size))
+        # print(cropped.shape, resized.shape)
+        # cv2.imshow("", resized)
+        # cv2.waitKey(0)
+
         (ret, croppedJpg) = cv2.imencode('.jpg', cropped)
 
         processedRect = {
@@ -62,9 +68,9 @@ def findRects(image):
         processedRects.append(processedRect)
     return processedRects
 
+
 def newImageCallback(channel, method, properties, body):
     decoded = BSON.decode(body)
-    print(decoded.keys())
 
     image = cv2.imdecode(np.fromstring(decoded['image'], dtype=np.uint8), flags=cv2.IMREAD_COLOR)
     rects = findRects(image)

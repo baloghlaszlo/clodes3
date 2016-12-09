@@ -22,8 +22,8 @@ else:
 client = MongoClient(mongoCred['uri'])
 collection = client['clodes3_frame_concentrator']['frames']
 collection.create_index('id', unique=True)
-collection.create_index('rects_pending.id', unique=True)
-
+collection.create_index('rects_pending.id')
+collection.create_index('faces_found.id')
 
 def dict_filter(d, keys):
     """From http://code.activestate.com/recipes/115417-subset-of-a-dictionary/#c2"""
@@ -40,9 +40,6 @@ def on_new_image(ch, method_frame, header_frame, body):
     document['rects_pending'] = []
     document['faces_found'] = []
 
-
-
-
     collection.insert(document)
 
     find_rects_new = dict_filter(new_image, ['id', 'image'])
@@ -55,7 +52,6 @@ IS_PIPELINE_COMPLETED_PROJECTION = {
     'rects_pending': {'$slice': 1}
 }
 
-
 def is_pipeline_completed(updated):
     return updated is not None and len(updated['features_pending']) == 0 and len(updated['rects_pending']) == 0
 
@@ -66,8 +62,8 @@ def handle_pipeline_completed(ch, frame_id):
     print('Image {}: done, {} faces found'.format(document['id'], len(document['faces_found'])))
 
     msg = dict_filter(document, ['id', 'camera_timestamp', 'camera_id', 'receive_timestamp'])
-    msg['faces_found'] = map(document['faces_found'],
-                             lambda x: dict_filter(x, ['x', 'y', 'width', 'height', 'feature_name']))
+    msg['faces_found'] = list(map(lambda x: dict_filter(x, ['x', 'y', 'width', 'height', 'feature_name']),
+                              document['faces_found']))
     ch.basic_publish(routing_key='image.faces.done', exchange='amq.topic', body=BSON.encode(msg))
 
 
@@ -125,13 +121,13 @@ def on_rects_done(ch, method_frame, header_frame, body):
         frame_id = matched_frame['id']
         matched_rect = matched_frame['rects_pending'][0]
         update = {
-            'rects_pending': {'$pull': {'id': matched_rect['id']}}
+            '$pull': {'rects_pending': {'id': matched_rect['id']}}
         }
         if rect_done['label'] == 1:
-            update['faces_found'] = {'$push': matched_rect}
+            update['$push'] = {'faces_found': matched_rect}
         updated = collection.find_one_and_update({
             'id': frame_id,
-            'rects_pending': {'id': matched_rect['id']}  # Also ,prepare for at-least-once delivery here.
+            'rects_pending.id': matched_rect['id']  # Also prepare for at-least-once delivery here.
         }, update, projection=IS_PIPELINE_COMPLETED_PROJECTION, return_document=ReturnDocument.AFTER)
 
         if is_pipeline_completed(updated):
@@ -153,7 +149,7 @@ channel = connection.channel()
 
 subscribe_to_topic(channel, 'image.new', on_new_image)
 subscribe_to_topic(channel, 'image.find_rects.done.*', on_find_rects_done)
-subscribe_to_topic(channel, 'rects.done.*', on_rects_done)
+subscribe_to_topic(channel, 'rects.classify.done.*', on_rects_done)
 
 # -----------------------------------------------------------------------------
 
