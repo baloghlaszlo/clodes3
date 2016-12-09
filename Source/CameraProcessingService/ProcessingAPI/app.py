@@ -28,10 +28,10 @@ class Frame(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('camera_id', required=True, type=int, location='form')
         parser.add_argument('camera_timestamp', required=True, type=int, location='form')
-        parser.add_argument('picture', required=True, type=FileStorage, location='files')
+        parser.add_argument('image', required=True, type=FileStorage, location='files')
         args = parser.parse_args()
 
-        image = args['picture'].read()
+        image = args['image'].read()
 
         msg = {
             'id': str(uuid.uuid1()),
@@ -40,7 +40,7 @@ class Frame(Resource):
             'receive_timestamp': int(time.time()),
             'image': bytes(image),
         }
-        print('Camera id: {}, camera timestamp: {}'.format(args['camera_id'], args['camera_timestamp']))
+        print('Camera id: {}, camera timestamp: {}, imgLen: {}'.format(args['camera_id'], args['camera_timestamp'], len(image)))
         channel.basic_publish(routing_key='image.new', exchange='amq.topic', body=BSON.encode(msg))
 
 app = Flask('ImgProcGateway')
