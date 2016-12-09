@@ -55,7 +55,6 @@ IS_PIPELINE_COMPLETED_PROJECTION = {
     'rects_pending': {'$slice': 1}
 }
 
-
 def is_pipeline_completed(updated):
     return updated is not None and len(updated['features_pending']) == 0 and len(updated['rects_pending']) == 0
 
@@ -142,7 +141,7 @@ def on_rects_done(ch, method_frame, header_frame, body):
 
 def subscribe_to_topic(ch, topic, callback):
     queue = "frame_concentrator.{}".format(topic)
-    ch.queue_declare(queue=queue)
+    ch.queue_declare(queue=queue, arguments={'x-message-ttl': 60000})
     ch.queue_bind(exchange='amq.topic', queue=queue, routing_key=topic)
     ch.basic_consume(consumer_callback=callback, queue=queue)
 
