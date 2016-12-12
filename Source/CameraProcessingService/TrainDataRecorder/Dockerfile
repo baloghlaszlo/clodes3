@@ -1,4 +1,4 @@
-FROM clodes3/python-opencv
+FROM python:3.5
 
 COPY * ./
 
