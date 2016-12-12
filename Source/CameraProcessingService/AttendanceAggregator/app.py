@@ -45,4 +45,5 @@ print('Consuming on {}'.format(input_queue_name))
 # -----------------------------------------------------------------------------
 
 if __name__ == '__main__':
+    print('Starting attendance aggregator...')
     channel.start_consuming()

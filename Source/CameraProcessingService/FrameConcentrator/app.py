@@ -159,7 +159,7 @@ subscribe_to_topic(channel, 'rects.classify.done.*', on_rects_done)
 # -----------------------------------------------------------------------------
 
 if __name__ == '__main__':
-    print('Starting to synchronously consume messages')
+    print('Starting frame concentrator...')
     try:
         channel.start_consuming()
     except KeyboardInterrupt:

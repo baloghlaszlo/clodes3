@@ -49,4 +49,5 @@ print('Consuming on {}'.format(input_queue_name))
 # -----------------------------------------------------------------------------
 
 if __name__ == '__main__':
+    print('Starting CNN processor...')
     channel.start_consuming()

@@ -99,4 +99,5 @@ print('Consuming on {}'.format(input_queue_name))
 # -----------------------------------------------------------------------------
 
 if __name__ == '__main__':
+    print('Starting image processor with {}...'.format(cascade_name))
     channel.start_consuming()
