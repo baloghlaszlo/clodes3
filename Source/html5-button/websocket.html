@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Python WebSocket demo</title>
+</head>
+
+<body>
+    <script>
+        var ws = new WebSocket("ws://127.0.0.1:5678/")
+        messages = document.createElement('ul');
+        ws.onmessage = function(event) {
+          console.log(event.data);
+            var tb = document.getElementById("connected-number");
+            tb.innerHTML = "Currently connected: #" + event.data;
+        };
+        document.body.appendChild(messages);
+    </script>
+
+<p id="connected-number"> Waiting for connection... </p>
+
+</body>
+
+
+</html>

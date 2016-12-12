@@ -2,7 +2,7 @@ import requests #pip install requests
 from uuid import getnode as get_mac
 import time
 
-publish_address = "http://127.0.0.1:8080/api/lab_agent/" + str(get_mac()) + "/"
+publish_address = "http://127.0.0.1:8080/api/lab_agent/1/"
 print(publish_address)
 
 if __name__ == "__main__":
