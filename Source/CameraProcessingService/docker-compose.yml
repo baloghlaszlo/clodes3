@@ -1,20 +1,49 @@
 version: '2'
 services:
-  mongo:
-    image: registry.eu-gb.bluemix.net/clodes3/mongo
-    ports:
-    - "27017:27017"
-  mongo_express:
-    image: registry.eu-gb.bluemix.net/clodes3/mongo-express
-    ports:
-    - "8081:8081"
-    links:
-    - mongo
-    depends_on:
-    - mongo
-
-  rabbitmq_management:
-    image: registry.eu-gb.bluemix.net/clodes3/rabbitmq:management
-    ports:
-    - "15672:15672"
-    - "5672:5672"
+  frame_concentrator:
+    image: registry.ng.bluemix.net/clodes3/frame-concentrator
+    environment:
+      - "CCS_BIND_APP=CloDeS3-CBAA"
+      - "FEATURES=haarcascade_frontalface_default:haarcascade_frontalface_alt:haarcascade_frontalface_alt2:haarcascade_fullbody:haarcascade_upperbody:haarcascade_profileface"
+  haarcascade_frontalface_default:
+    image: registry.ng.bluemix.net/clodes3/image-processor
+    environment:
+      - "CCS_BIND_APP=CloDeS3-CBAA"
+      - "FEATURE=haarcascade_frontalface_default"
+  haarcascade_frontalface_alt:
+    image: registry.ng.bluemix.net/clodes3/image-processor
+    environment:
+      - "CCS_BIND_APP=CloDeS3-CBAA"
+      - "FEATURE=haarcascade_frontalface_alt"
+  haarcascade_frontalface_alt2:
+    image: registry.ng.bluemix.net/clodes3/image-processor
+    environment:
+      - "CCS_BIND_APP=CloDeS3-CBAA"
+      - "FEATURE=haarcascade_frontalface_alt2"
+  haarcascade_fullbody:
+    image: registry.ng.bluemix.net/clodes3/image-processor
+    environment:
+      - "CCS_BIND_APP=CloDeS3-CBAA"
+      - "FEATURE=haarcascade_fullbody"
+  haarcascade_upperbody:
+    image: registry.ng.bluemix.net/clodes3/image-processor
+    environment:
+      - "CCS_BIND_APP=CloDeS3-CBAA"
+      - "FEATURE=haarcascade_upperbody"
+  haarcascade_profileface:
+    image: registry.ng.bluemix.net/clodes3/image-processor
+    environment:
+      - "CCS_BIND_APP=CloDeS3-CBAA"
+      - "FEATURE=haarcascade_profileface"
+  cnn_processor:
+    image: registry.ng.bluemix.net/clodes3/cnn-processor
+    environment:
+      - "CCS_BIND_APP=CloDeS3-CBAA"
+  attendance_aggregator:
+    image: registry.ng.bluemix.net/clodes3/attendance-aggregator
+    environment:
+      - "CCS_BIND_APP=CloDeS3-CBAA"
+  train_data_recorder:
+    image: registry.ng.bluemix.net/clodes3/train-data-recorder
+    environment:
+      - "CCS_BIND_APP=CloDeS3-CBAA"
