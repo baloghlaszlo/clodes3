@@ -1,5 +1,6 @@
 import json
 import os
+import ssl
 import uuid
 
 import pika
@@ -20,7 +21,7 @@ else:
     mongoCred = {'uri': 'localhost'}
 
 # Connect to Mongo
-client = MongoClient(mongoCred['uri'])
+client = MongoClient(mongoCred['uri'], ssl_cert_reqs=ssl.CERT_NONE)
 collection = client['clodes3_frame_concentrator']['frames']
 collection.create_index('id', unique=True)
 collection.create_index('rects_pending.id')

@@ -1,3 +1,5 @@
+import os
+
 import flask
 from flask import Flask, abort, Response
 from flask_restful import Api, Resource, reqparse
@@ -104,4 +106,11 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8889)
+    if 'VCAP_SERVICES' in os.environ:
+        PORT = int(os.getenv('VCAP_APP_PORT'))
+        HOST = str(os.getenv('VCAP_APP_HOST'))
+    else:
+        PORT = 8080
+        HOST = '0.0.0.0'
+    print('Starting flask service on {}:{}'.format(HOST, PORT))
+    app.run(host=HOST, port=PORT, debug=True)
