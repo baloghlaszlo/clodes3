@@ -5,7 +5,7 @@
   "main": "''",
   "scripts": {
     "build": "webpack",
-    "start-dev": "webpack-dev-server --display-error-details --progress --inline --colors --hot --host 0.0.0.0"
+    "start-dev": "webpack-dev-server --display-error-details --progress --inline --colors --hot --host 0.0.0.0 --port 8888"
   },
   "dependencies": {
     "material-ui": "^0.16.1",
@@ -29,6 +29,7 @@
     "html-webpack-plugin": "^2.24.1",
     "react-hot-loader": "^3.0.0-beta.6",
     "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "whatwg-fetch": "^2.0.1"
   }
 }

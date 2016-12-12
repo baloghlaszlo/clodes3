@@ -1,7 +1,7 @@
 
-export const RANDOM_RECT_ENDPOINT = '/api/rects/random';
+export const RANDOM_RECT_ENDPOINT = '/api/rects';
 
-export const RANDOM_FRAME_ENDPOINT = '/api/frames/random';
+export const RANDOM_FRAME_ENDPOINT = '/api/frames';
 
 export const LABELER_OPENED = 'LABELED_OPENED';
 
