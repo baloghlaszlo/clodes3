@@ -2,6 +2,7 @@ import json
 import os
 import ssl
 import uuid
+import ssl
 
 import pika
 from bson import BSON
