@@ -19,8 +19,8 @@ else:
     rabbitCred = {'uri': 'amqp://localhost'}
 
 # Connect to RabbitMQ
-connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
-channel = connection.channel()
+#connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
+#channel = connection.channel()
 
 # -----------------------------------------------------------------------------
 
@@ -45,14 +45,11 @@ class Frame(Resource):
         }
 
         print('Camera id: {}, camera timestamp: {}'.format(args['camera_id'], args['camera_timestamp']))
-        try:
-            channel.basic_publish(routing_key='image.new', exchange='amq.topic', body=BSON.encode(msg))
-        except pika.exceptions.ConnectionClosed:
-            # Try to reconnect to RabbitMQ
-            connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
-            channel = connection.channel()
 
-            channel.basic_publish(routing_key='image.new', exchange='amq.topic', body=BSON.encode(msg))
+        connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
+        channel = connection.channel()
+        channel.basic_publish(routing_key='image.new', exchange='amq.topic', body=BSON.encode(msg))
+        connection.close()
 
 app = Flask('ImgProcGateway')
 api = Api(app)
