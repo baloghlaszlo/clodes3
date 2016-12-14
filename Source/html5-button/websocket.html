@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Current attendance portal</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script>
+        var ws = new WebSocket("ws://127.0.0.1:5678/")
+        messages = document.createElement('ul');
+        ws.onmessage = function(event) {
+            console.log(event.data);
+            var tb = document.getElementById("connected-number");
+            tb.innerHTML = "Currently connected: #" + event.data;
+        };
+        document.body.appendChild(messages);
+
+        function sendAirQualityWarningToServer() {
+            $.post('127.0.0.1:6789/smelly', {
+                    "source": "html5-button"
+                }
+            }
+    </script>
+
+    <p id="connected-number"> Waiting for connection... </p>
+    <button type="button" onclick=sendAirQualityWarningToServer();>I find the lack of air quality disturbing</button>
+
+</body>
+
+
+</html>
