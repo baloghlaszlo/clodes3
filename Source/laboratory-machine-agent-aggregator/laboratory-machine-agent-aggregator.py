@@ -1,5 +1,4 @@
 import flask #pip install flask
-import flask_restful #pip install flask_restful
 import time
 import os
 import requests #pip install requests
