@@ -7,53 +7,78 @@ services:
       - "CCS_BIND_APP=CloDeS3-CBAA"
       - "FEATURE=haarcascade_frontalface_default:haarcascade_frontalface_alt:haarcascade_frontalface_alt2:haarcascade_fullbody:haarcascade_upperbody:haarcascade_profileface"
   haarcascade_frontalface_default:
-    mem_limit: 64
+    mem_limit: 256
     image: registry.ng.bluemix.net/clodes3/image-processor
     environment:
       - "CCS_BIND_APP=CloDeS3-CBAA"
       - "HAAR_CASCADE=haarcascade_frontalface_default"
+    depends_on:
+      - frame_concentrator
   haarcascade_frontalface_alt:
-    mem_limit: 64
+    mem_limit: 256
     image: registry.ng.bluemix.net/clodes3/image-processor
     environment:
       - "CCS_BIND_APP=CloDeS3-CBAA"
       - "HAAR_CASCADE=haarcascade_frontalface_alt"
+    depends_on:
+      - frame_concentrator
   haarcascade_frontalface_alt2:
-    mem_limit: 64
+    mem_limit: 256
     image: registry.ng.bluemix.net/clodes3/image-processor
     environment:
       - "CCS_BIND_APP=CloDeS3-CBAA"
       - "HAAR_CASCADE=haarcascade_frontalface_alt2"
+    depends_on:
+      - frame_concentrator
   haarcascade_fullbody:
-    mem_limit: 64
+    mem_limit: 256
     image: registry.ng.bluemix.net/clodes3/image-processor
     environment:
       - "CCS_BIND_APP=CloDeS3-CBAA"
       - "HAAR_CASCADE=haarcascade_fullbody"
+    depends_on:
+      - frame_concentrator
   haarcascade_upperbody:
-    mem_limit: 64
+    mem_limit: 256
     image: registry.ng.bluemix.net/clodes3/image-processor
     environment:
       - "CCS_BIND_APP=CloDeS3-CBAA"
       - "HAAR_CASCADE=haarcascade_upperbody"
+    depends_on:
+      - frame_concentrator
   haarcascade_profileface:
-    mem_limit: 64
+    mem_limit: 256
     image: registry.ng.bluemix.net/clodes3/image-processor
     environment:
       - "CCS_BIND_APP=CloDeS3-CBAA"
       - "HAAR_CASCADE=haarcascade_profileface"
+    depends_on:
+      - frame_concentrator
   cnn_processor:
-    mem_limit: 64
+    mem_limit: 256
     image: registry.ng.bluemix.net/clodes3/cnn-processor
     environment:
       - "CCS_BIND_APP=CloDeS3-CBAA"
+    depends_on:
+      - frame_concentrator
+      - haarcascade_frontalface_default
+      - haarcascade_frontalface_alt
+      - haarcascade_frontalface_alt2
+      - haarcascade_fullbody
+      - haarcascade_upperbody
+      - haarcascade_profileface
   attendance_aggregator:
     mem_limit: 64
     image: registry.ng.bluemix.net/clodes3/attendance-aggregator
     environment:
       - "CCS_BIND_APP=CloDeS3-CBAA"
+    depends_on:
+      - frame_concentrator
+      - cnn_processor
   train_data_recorder:
     mem_limit: 64
     image: registry.ng.bluemix.net/clodes3/train-data-recorder
     environment:
       - "CCS_BIND_APP=CloDeS3-CBAA"
+    depends_on:
+      - frame_concentrator

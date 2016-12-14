@@ -1,0 +1,116 @@
+version: '2'
+services:
+
+  mongo:
+    image: mongo
+
+  rabbitmq:
+    image: rabbitmq:management
+
+  frame_concentrator:
+    build: ./FrameConcentrator
+    image: frame-concentrator
+    links:
+      - rabbitmq
+    environment:
+      - "FEATURE=haarcascade_frontalface_default:haarcascade_frontalface_alt:haarcascade_frontalface_alt2:haarcascade_fullbody:haarcascade_upperbody:haarcascade_profileface"
+    depends_on:
+      - mongo
+      - rabbitmq
+
+  haarcascade_frontalface_default:
+    extends:
+      file: common-services.yml
+      service: haarcascade
+    links:
+      - rabbitmq
+    environment:
+      - "HAAR_CASCADE=haarcascade_frontalface_default"
+    depends_on:
+      - frame_concentrator
+
+  haarcascade_frontalface_alt:
+    extends:
+      file: common-services.yml
+      service: haarcascade
+    links:
+      - rabbitmq
+    environment:
+      - "HAAR_CASCADE=haarcascade_frontalface_alt"
+    depends_on:
+      - frame_concentrator
+
+  haarcascade_frontalface_alt2:
+    extends:
+      file: common-services.yml
+      service: haarcascade
+    links:
+      - rabbitmq
+    environment:
+      - "HAAR_CASCADE=haarcascade_frontalface_alt2"
+    depends_on:
+      - frame_concentrator
+
+  haarcascade_fullbody:
+    extends:
+      file: common-services.yml
+      service: haarcascade
+    links:
+      - rabbitmq
+    environment:
+      - "HAAR_CASCADE=haarcascade_fullbody"
+    depends_on:
+      - frame_concentrator
+
+  haarcascade_upperbody:
+    extends:
+      file: common-services.yml
+      service: haarcascade
+    links:
+      - rabbitmq
+    environment:
+      - "HAAR_CASCADE=haarcascade_upperbody"
+    depends_on:
+      - frame_concentrator
+
+  haarcascade_profileface:
+    extends:
+      file: common-services.yml
+      service: haarcascade
+    links:
+      - rabbitmq
+    environment:
+      - "HAAR_CASCADE=haarcascade_profileface"
+    depends_on:
+      - frame_concentrator
+
+  cnn_processor:
+    build: ./CnnProcessor
+    image: cnn-processor
+    links:
+      - rabbitmq
+    depends_on:
+      - frame_concentrator
+      - haarcascade_frontalface_default
+      - haarcascade_frontalface_alt
+      - haarcascade_frontalface_alt2
+      - haarcascade_fullbody
+      - haarcascade_upperbody
+      - haarcascade_profileface
+
+  attendance_aggregator:
+    build: ./AttendanceAggregator
+    image: attendance-aggregator
+    links:
+      - rabbitmq
+    depends_on:
+      - frame_concentrator
+      - cnn_processor
+
+  train_data_recorder:
+    build: ./TrainDataRecorder
+    image: train-data-recorder
+    links:
+      - rabbitmq
+    depends_on:
+      - frame_concentrator
