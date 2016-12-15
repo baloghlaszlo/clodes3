@@ -1,5 +1,6 @@
 import json
 import os
+import ssl
 import uuid
 import ssl
 
@@ -146,6 +147,8 @@ def subscribe_to_topic(ch, topic, callback):
     ch.queue_bind(exchange='amq.topic', queue=queue, routing_key=topic)
     ch.basic_consume(consumer_callback=callback, queue=queue)
 
+import time
+time.sleep(2)
 
 # Connect to RabbitMQ
 connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))

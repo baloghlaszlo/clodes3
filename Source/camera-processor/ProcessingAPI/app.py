@@ -18,16 +18,10 @@ if 'VCAP_SERVICES' in os.environ:
 else:
     rabbitCred = {'uri': 'amqp://localhost'}
 
-# Connect to RabbitMQ
-#connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
-#channel = connection.channel()
-
 # -----------------------------------------------------------------------------
 
 class Frame(Resource):
     def post(self):
-        global connection, channel
-
         parser = reqparse.RequestParser()
         parser.add_argument('camera_id', required=True, type=int, location='form')
         parser.add_argument('camera_timestamp', required=True, type=int, location='form')
@@ -46,10 +40,18 @@ class Frame(Resource):
 
         print('Camera id: {}, camera timestamp: {}'.format(args['camera_id'], args['camera_timestamp']))
 
-        connection = pika.BlockingConnection(pika.URLParameters(url=rabbitCred['uri']))
-        channel = connection.channel()
-        channel.basic_publish(routing_key='image.new', exchange='amq.topic', body=BSON.encode(msg))
-        connection.close()
+        def on_open(connection):
+            def on_channel_open(channel):
+                channel.basic_publish(routing_key='image.new', exchange='amq.topic', body=BSON.encode(msg))
+                connection.close()
+            connection.channel(on_channel_open)
+        conn = pika.SelectConnection(pika.URLParameters(url=rabbitCred['uri']), on_open_callback=on_open)
+        try:
+            conn.ioloop.start()
+        except KeyboardInterrupt:
+            conn.close()
+            conn.ioloop.start()
+            raise KeyboardInterrupt()
 
 app = Flask('ImgProcGateway')
 api = Api(app)
