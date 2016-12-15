@@ -1,10 +1,11 @@
 import requests #pip install requests
 from uuid import getnode as get_mac
 import time
+import random
 
-testid = '1' 
-
-publish_address = "http://127.0.0.1:8080/api/lab_agent/" + testid + "/"
+testid = str(random.randint(1,10000))
+print(testid)
+publish_address = "http://laboratory-machine-agent-aggregator.mybluemix.net/api/lab_agent/" + testid + "/"
 print(publish_address)
 
 if __name__ == "__main__":
