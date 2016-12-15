@@ -17,7 +17,6 @@ if 'VCAP_SERVICES' in os.environ:
     rabbitCred = rabbitInfo["credentials"]
 else:
     rabbitCred = {'uri': 'amqp://localhost'}
-    # rabbitCred = {'uri': 'amqps://admin:LUOGSFVFRDVPUFJV@sl-us-dal-9-portal.1.dblayer.com:17596/bmix_dal_yp_53be2888_9051_4e63_a36e_12bc9460a0b6'}
 
 # -----------------------------------------------------------------------------
 

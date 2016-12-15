@@ -3,20 +3,31 @@ services:
 
   mongo:
     image: mongo
+    ports:
+      - "27017:27017"
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    links:
+      - mongo
 
   rabbitmq:
     image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
 
   frame_concentrator:
     build: ./FrameConcentrator
     image: frame-concentrator
     links:
-      - rabbitmq
-    environment:
-      - "FEATURE=haarcascade_frontalface_default:haarcascade_frontalface_alt:haarcascade_frontalface_alt2:haarcascade_fullbody:haarcascade_upperbody:haarcascade_profileface"
-    depends_on:
       - mongo
       - rabbitmq
+    environment:
+      - "FEATURES=haarcascade_frontalface_default:haarcascade_frontalface_alt:haarcascade_frontalface_alt2:haarcascade_fullbody:haarcascade_upperbody:haarcascade_profileface"
+      - "VCAP_SERVICES={\"compose-for-rabbitmq\": [{\"credentials\": {\"uri\": \"amqp://rabbitmq:5672\"}}], \"compose-for-mongodb\": [{\"credentials\": {\"uri\": \"mongodb://mongo:27017\"}}]}"
 
   haarcascade_frontalface_default:
     extends:
@@ -26,6 +37,7 @@ services:
       - rabbitmq
     environment:
       - "HAAR_CASCADE=haarcascade_frontalface_default"
+      - "VCAP_SERVICES={\"compose-for-rabbitmq\": [{\"credentials\": {\"uri\": \"amqp://rabbitmq:5672\"}}]}"
     depends_on:
       - frame_concentrator
 
@@ -37,6 +49,7 @@ services:
       - rabbitmq
     environment:
       - "HAAR_CASCADE=haarcascade_frontalface_alt"
+      - "VCAP_SERVICES={\"compose-for-rabbitmq\": [{\"credentials\": {\"uri\": \"amqp://rabbitmq:5672\"}}]}"
     depends_on:
       - frame_concentrator
 
@@ -48,6 +61,7 @@ services:
       - rabbitmq
     environment:
       - "HAAR_CASCADE=haarcascade_frontalface_alt2"
+      - "VCAP_SERVICES={\"compose-for-rabbitmq\": [{\"credentials\": {\"uri\": \"amqp://rabbitmq:5672\"}}]}"
     depends_on:
       - frame_concentrator
 
@@ -59,6 +73,7 @@ services:
       - rabbitmq
     environment:
       - "HAAR_CASCADE=haarcascade_fullbody"
+      - "VCAP_SERVICES={\"compose-for-rabbitmq\": [{\"credentials\": {\"uri\": \"amqp://rabbitmq:5672\"}}]}"
     depends_on:
       - frame_concentrator
 
@@ -70,6 +85,7 @@ services:
       - rabbitmq
     environment:
       - "HAAR_CASCADE=haarcascade_upperbody"
+      - "VCAP_SERVICES={\"compose-for-rabbitmq\": [{\"credentials\": {\"uri\": \"amqp://rabbitmq:5672\"}}]}"
     depends_on:
       - frame_concentrator
 
@@ -81,6 +97,7 @@ services:
       - rabbitmq
     environment:
       - "HAAR_CASCADE=haarcascade_profileface"
+      - "VCAP_SERVICES={\"compose-for-rabbitmq\": [{\"credentials\": {\"uri\": \"amqp://rabbitmq:5672\"}}]}"
     depends_on:
       - frame_concentrator
 
@@ -89,6 +106,8 @@ services:
     image: cnn-processor
     links:
       - rabbitmq
+    environment:
+      - "VCAP_SERVICES={\"compose-for-rabbitmq\": [{\"credentials\": {\"uri\": \"amqp://rabbitmq:5672\"}}]}"
     depends_on:
       - frame_concentrator
       - haarcascade_frontalface_default
@@ -103,6 +122,8 @@ services:
     image: attendance-aggregator
     links:
       - rabbitmq
+    environment:
+      - "VCAP_SERVICES={\"compose-for-rabbitmq\": [{\"credentials\": {\"uri\": \"amqp://rabbitmq:5672\"}}]}"
     depends_on:
       - frame_concentrator
       - cnn_processor
@@ -112,5 +133,7 @@ services:
     image: train-data-recorder
     links:
       - rabbitmq
+    environment:
+      - "VCAP_SERVICES={\"compose-for-rabbitmq\": [{\"credentials\": {\"uri\": \"amqp://rabbitmq:5672\"}}]}"
     depends_on:
       - frame_concentrator

@@ -16,14 +16,13 @@ rects_collection = client['clodes3']['rects']
 
 
 def get_random_unlabeled(collection):
-    # random = collection.aggregate([
-    #    {'$match': {'label': {'$exists': False}}},
-    #    {'$sample': 1}
-    #])
-    #for doc in random.limit(-1):
-    #    return doc
-    #return None
-    return collection.find_one({'label': {'$exists': False}})
+    random = collection.aggregate([
+        {'$match': {'label': {'$exists': False}}},
+        {'$sample': {'size': 1}}
+    ])
+    for doc in random:
+        return doc
+    return None
 
 
 def post_label(collection, item_id):
@@ -110,7 +109,7 @@ if __name__ == '__main__':
         PORT = int(os.getenv('VCAP_APP_PORT'))
         HOST = str(os.getenv('VCAP_APP_HOST'))
     else:
-        PORT = 8080
+        PORT = 8082
         HOST = '0.0.0.0'
     print('Starting flask service on {}:{}'.format(HOST, PORT))
     app.run(host=HOST, port=PORT, debug=True)
