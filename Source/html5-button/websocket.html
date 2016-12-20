@@ -3,24 +3,24 @@
 
 <head>
     <title>Current attendance portal</title>
+	<meta charset="UTF-8">
 </head>
 
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script>
-        var ws = new WebSocket("ws://127.0.0.1:5678/")
+        var ws = new WebSocket("ws://127.0.0.1:8080/")
         messages = document.createElement('ul');
         ws.onmessage = function(event) {
-            console.log(event.data);
             var tb = document.getElementById("connected-number");
             tb.innerHTML = "Currently connected: #" + event.data;
         };
         document.body.appendChild(messages);
 
         function sendAirQualityWarningToServer() {
-            $.post('127.0.0.1:6789/smelly', {
+            $.post('https://clodes3-airstatus.mybluemix.net/alert', {
                     "source": "html5-button"
-                }
+                })
             }
     </script>
 

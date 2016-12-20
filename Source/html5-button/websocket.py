@@ -1,18 +1,14 @@
 import asyncio
 import websockets
-import urllib
-import urllib.request
+import requests
+import os
 
-## Global constans for the server
-ip = '127.0.0.1'
-port = 5678
-
-pubAddress = "http://baprof.net"
+publish_address = "https://attendance-aggregator.mybluemix.net/attendance"
 
 ## Currently alive websocket connections
 connected = set()
 
-## A counter for optimizing the amount of the REST connections
+## A counter for optimizing the amount of the REST messages
 i = 0
 
 async def sendConnectedNumber(websocket):
@@ -28,21 +24,7 @@ async def sendConnectedNumber(websocket):
         return
 
 def postToAggregator():
-    try:
-        # Prepare the data
-        values = {'agent' : 'HTML5PortalAgent', 'attendance' : str(len(connected))}
-        data = urllib.parse.urlencode(values)
-
-        # Send HTTP POST request
-        req = urllib.request.Request(pubAddress, data.encode('UTF-8'))
-        response = urllib.request.urlopen(req)
-
-        html = response.read()
-
-        # Print the result
-        print(html)
-    except Exception as ex:
-        print(ex)
+    r = requests.put(publish_address, data = {'source':'html5-attendance-aggregator', 'attendance':len(connected)})
 
 
 async def handler(websocket, path):
@@ -58,12 +40,16 @@ async def handler(websocket, path):
         if(i == len(connected)):
             i = 0
             postToAggregator()
-
-
-
-if __name__ == "__main__":
-	#Start the server
-	print("starting the server...")
-	start_server = websockets.serve(handler, ip, port)
-	asyncio.get_event_loop().run_until_complete(start_server)
-	asyncio.get_event_loop().run_forever()
+	
+if __name__ == '__main__':
+    if 'VCAP_SERVICES' in os.environ:
+        PORT = int(os.getenv('VCAP_APP_PORT'))
+        HOST = str(os.getenv('VCAP_APP_HOST'))
+    else:
+        PORT = 8080
+        HOST = '127.0.0.1'
+        #Start the server
+        print("starting the server...")
+        start_server = websockets.serve(handler, HOST, PORT)
+        asyncio.get_event_loop().run_until_complete(start_server)
+        asyncio.get_event_loop().run_forever()
