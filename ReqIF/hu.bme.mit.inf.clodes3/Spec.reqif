@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REQ-IF xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd" xmlns:configuration="http://eclipse.org/rmf/pror/toolextensions/1.0">
+  <THE-HEADER>
+    <REQ-IF-HEADER IDENTIFIER="_r4mV8ceLEeaixKR_9xPDcg">
+      <COMMENT>Created by: Balogh Laszlo</COMMENT>
+      <CREATION-TIME>2016-12-21T15:42:24.078+01:00</CREATION-TIME>
+      <REQ-IF-TOOL-ID>fmStudio (http://formalmind.com/studio)</REQ-IF-TOOL-ID>
+      <REQ-IF-VERSION>1.0</REQ-IF-VERSION>
+      <SOURCE-TOOL-ID>ProR (http://pror.org)</SOURCE-TOOL-ID>
+      <TITLE>Clodes3</TITLE>
+    </REQ-IF-HEADER>
+  </THE-HEADER>
+  <CORE-CONTENT>
+    <REQ-IF-CONTENT>
+      <DATATYPES>
+        <DATATYPE-DEFINITION-STRING IDENTIFIER="_r4mV88eLEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:42:24.078+01:00" LONG-NAME="T_String32k" MAX-LENGTH="32000"/>
+      </DATATYPES>
+      <SPEC-TYPES>
+        <SPEC-OBJECT-TYPE IDENTIFIER="_r4mV9MeLEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:42:24.078+01:00" LONG-NAME="Requirement Type">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_r4mV9ceLEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:42:24.078+01:00" LONG-NAME="Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_r4mV88eLEeaixKR_9xPDcg</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+          </SPEC-ATTRIBUTES>
+        </SPEC-OBJECT-TYPE>
+        <SPECIFICATION-TYPE IDENTIFIER="_r4mV9seLEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:42:24.078+01:00" LONG-NAME="Specification Type">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_r4mV98eLEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:42:24.078+01:00" LONG-NAME="Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_r4mV88eLEeaixKR_9xPDcg</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+          </SPEC-ATTRIBUTES>
+        </SPECIFICATION-TYPE>
+      </SPEC-TYPES>
+      <SPEC-OBJECTS>
+        <SPEC-OBJECT IDENTIFIER="_r4mV-MeLEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:51:26.600+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Munkavégzés produktivitásának maximalizálása">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_vdZSYMeLEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:51:52.571+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Légkör optimalizálása">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_WZsu8MeMEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:50:19.360+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Zajszint minimalizálása">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_qD8E8MeMEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:54:21.327+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Hőmérséklet optimalizálása">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_XWkxcMeNEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:05:29.720+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="CO^2 szint megfigyelése">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_WousoMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:15:44.192+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Aktuális hőmérséklet mérése">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_dVCMkMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:16:31.994+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Várható hőmérséklet előrejelzése">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_haatkMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:16:59.552+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Külső hőmérséklet megfigyelése">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_nMTMoMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:18:17.117+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Külső forrás (időjárásjelentő) lekérdezése">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_tdmyoMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:21:03.771+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Teremhőmérséklet megfigyelése">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_3uRKIMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:21:34.745+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Hőmérséklet mérése redundánsan">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_hxsvsMeREeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:32:20.749+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Várható külső hőmérséklet számítása (időjárásjelentő)">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_nCsIMMeREeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:24:46.449+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Várható teremfoglalás számítása">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_ywDHMMeREeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:46:33.671+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Előrejelzés érvényesítése fényérzékeléssel">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_6HdkMMeSEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:34:03.244+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Nem megfelelő hőmérséklet jelzése">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_7pglwMeSEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:34:07.185+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Webes jelzés">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_9WJtwMeSEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:34:25.756+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Fizikai jelzés">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_Ur8vgMeTEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:52:01.475+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Órarend figyelembe vétele">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_cyVV4MeVEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:54:49.723+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Kritikus szint figyelése">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_5IeFAMeVEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:55:24.191+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Azonnali beavatkozási lehetőség">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_P4E0AMeXEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T17:09:54.780+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Aktuális teremfoglalás megfigyelése">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_6vTOAMeXEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T17:09:49.213+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Számítógépek bekapcsolt állapotának észlelése">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="__mat8MeXEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T17:11:29.916+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Arcok felismerése kamera segítségével">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+      </SPEC-OBJECTS>
+      <SPECIFICATIONS>
+        <SPECIFICATION IDENTIFIER="_r4mV-seLEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:42:24.078+01:00" LONG-NAME="Specification Document">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Requirements Document">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV98eLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPECIFICATION-TYPE-REF>_r4mV9seLEeaixKR_9xPDcg</SPECIFICATION-TYPE-REF>
+          </TYPE>
+          <CHILDREN>
+            <SPEC-HIERARCHY IDENTIFIER="_r4mV_MeLEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:42:24.078+01:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_r4mV-MeLEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+              </OBJECT>
+              <CHILDREN>
+                <SPEC-HIERARCHY IDENTIFIER="_vd620MeLEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:42:29.469+01:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_vdZSYMeLEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                  </OBJECT>
+                  <CHILDREN>
+                    <SPEC-HIERARCHY IDENTIFIER="_qEgssMeMEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:49:16.637+01:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_qD8E8MeMEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                      </OBJECT>
+                      <CHILDREN>
+                        <SPEC-HIERARCHY IDENTIFIER="_WpQREMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:15:44.192+01:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_WousoMeQEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                          </OBJECT>
+                          <CHILDREN>
+                            <SPEC-HIERARCHY IDENTIFIER="_ha-HMMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:16:59.552+01:00">
+                              <OBJECT>
+                                <SPEC-OBJECT-REF>_haatkMeQEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                              </OBJECT>
+                              <CHILDREN>
+                                <SPEC-HIERARCHY IDENTIFIER="_nM3NUMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:17:03.450+01:00">
+                                  <OBJECT>
+                                    <SPEC-OBJECT-REF>_nMTMoMeQEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                                  </OBJECT>
+                                </SPEC-HIERARCHY>
+                              </CHILDREN>
+                            </SPEC-HIERARCHY>
+                            <SPEC-HIERARCHY IDENTIFIER="_teIXEMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:18:20.458+01:00">
+                              <OBJECT>
+                                <SPEC-OBJECT-REF>_tdmyoMeQEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                              </OBJECT>
+                              <CHILDREN>
+                                <SPEC-HIERARCHY IDENTIFIER="_3u2Y8MeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:18:23.680+01:00">
+                                  <OBJECT>
+                                    <SPEC-OBJECT-REF>_3uRKIMeQEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                                  </OBJECT>
+                                </SPEC-HIERARCHY>
+                              </CHILDREN>
+                            </SPEC-HIERARCHY>
+                            <SPEC-HIERARCHY IDENTIFIER="_6H_IoMeSEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:34:03.244+01:00">
+                              <OBJECT>
+                                <SPEC-OBJECT-REF>_6HdkMMeSEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                              </OBJECT>
+                              <CHILDREN>
+                                <SPEC-HIERARCHY IDENTIFIER="_7qBjIMeSEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:34:07.185+01:00">
+                                  <OBJECT>
+                                    <SPEC-OBJECT-REF>_7pglwMeSEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                                  </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_9Wr5QMeSEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:34:25.756+01:00">
+                                  <OBJECT>
+                                    <SPEC-OBJECT-REF>_9WJtwMeSEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                                  </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_5JVAoMeVEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:55:24.191+01:00">
+                                  <OBJECT>
+                                    <SPEC-OBJECT-REF>_5IeFAMeVEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                                  </OBJECT>
+                                </SPEC-HIERARCHY>
+                              </CHILDREN>
+                            </SPEC-HIERARCHY>
+                          </CHILDREN>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_dVkYEMeQEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:16:31.994+01:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_dVCMkMeQEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                          </OBJECT>
+                          <CHILDREN>
+                            <SPEC-HIERARCHY IDENTIFIER="_hyOUIMeREeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:24:11.664+01:00">
+                              <OBJECT>
+                                <SPEC-OBJECT-REF>_hxsvsMeREeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                              </OBJECT>
+                              <CHILDREN/>
+                            </SPEC-HIERARCHY>
+                            <SPEC-HIERARCHY IDENTIFIER="_nDO6wMeREeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:24:46.449+01:00">
+                              <OBJECT>
+                                <SPEC-OBJECT-REF>_nCsIMMeREeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                              </OBJECT>
+                              <CHILDREN>
+                                <SPEC-HIERARCHY IDENTIFIER="_ywoWAMeREeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:25:55.601+01:00">
+                                  <OBJECT>
+                                    <SPEC-OBJECT-REF>_ywDHMMeREeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                                  </OBJECT>
+                                </SPEC-HIERARCHY>
+                                <SPEC-HIERARCHY IDENTIFIER="_UsvZsMeTEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:37:02.108+01:00">
+                                  <OBJECT>
+                                    <SPEC-OBJECT-REF>_Ur8vgMeTEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                                  </OBJECT>
+                                </SPEC-HIERARCHY>
+                              </CHILDREN>
+                            </SPEC-HIERARCHY>
+                          </CHILDREN>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_P4tGIMeXEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T17:05:08.182+01:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_P4E0AMeXEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                          </OBJECT>
+                          <CHILDREN>
+                            <SPEC-HIERARCHY IDENTIFIER="_6v65EMeXEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T17:09:49.213+01:00">
+                              <OBJECT>
+                                <SPEC-OBJECT-REF>_6vTOAMeXEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                              </OBJECT>
+                            </SPEC-HIERARCHY>
+                            <SPEC-HIERARCHY IDENTIFIER="__nAj0MeXEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T17:10:28.559+01:00">
+                              <OBJECT>
+                                <SPEC-OBJECT-REF>__mat8MeXEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                              </OBJECT>
+                            </SPEC-HIERARCHY>
+                          </CHILDREN>
+                        </SPEC-HIERARCHY>
+                      </CHILDREN>
+                    </SPEC-HIERARCHY>
+                    <SPEC-HIERARCHY IDENTIFIER="_XXNDkMeNEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:54:22.853+01:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_XWkxcMeNEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                      </OBJECT>
+                      <CHILDREN>
+                        <SPEC-HIERARCHY IDENTIFIER="_cy5WkMeVEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T16:52:02.492+01:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_cyVV4MeVEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                          </OBJECT>
+                        </SPEC-HIERARCHY>
+                      </CHILDREN>
+                    </SPEC-HIERARCHY>
+                  </CHILDREN>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_WaVoIMeMEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:46:58.529+01:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_WZsu8MeMEeaixKR_9xPDcg</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+              </CHILDREN>
+            </SPEC-HIERARCHY>
+          </CHILDREN>
+        </SPECIFICATION>
+      </SPECIFICATIONS>
+    </REQ-IF-CONTENT>
+  </CORE-CONTENT>
+  <TOOL-EXTENSIONS>
+    <REQ-IF-TOOL-EXTENSION>
+      <configuration:ProrToolExtension>
+        <configuration:specViewConfigurations>
+          <configuration:ProrSpecViewConfiguration specification="_r4mV-seLEeaixKR_9xPDcg">
+            <configuration:columns>
+              <configuration:Column label="Description" width="400"/>
+            </configuration:columns>
+            <configuration:leftHeaderColumn>
+              <configuration:Column label="Lead Header Column" width="30"/>
+            </configuration:leftHeaderColumn>
+          </configuration:ProrSpecViewConfiguration>
+        </configuration:specViewConfigurations>
+        <configuration:generalConfiguration>
+          <configuration:ProrGeneralConfiguration>
+            <configuration:labelConfiguration>
+              <configuration:LabelConfiguration>
+                <defaultLabel>Description</defaultLabel>
+              </configuration:LabelConfiguration>
+            </configuration:labelConfiguration>
+          </configuration:ProrGeneralConfiguration>
+        </configuration:generalConfiguration>
+      </configuration:ProrToolExtension>
+    </REQ-IF-TOOL-EXTENSION>
+  </TOOL-EXTENSIONS>
+</REQ-IF>
