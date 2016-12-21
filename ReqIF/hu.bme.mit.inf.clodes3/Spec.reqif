@@ -60,18 +60,6 @@
             <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
           </TYPE>
         </SPEC-OBJECT>
-        <SPEC-OBJECT IDENTIFIER="_WZsu8MeMEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:50:19.360+01:00">
-          <VALUES>
-            <ATTRIBUTE-VALUE-STRING THE-VALUE="Zajszint minimalizálása">
-              <DEFINITION>
-                <ATTRIBUTE-DEFINITION-STRING-REF>_r4mV9ceLEeaixKR_9xPDcg</ATTRIBUTE-DEFINITION-STRING-REF>
-              </DEFINITION>
-            </ATTRIBUTE-VALUE-STRING>
-          </VALUES>
-          <TYPE>
-            <SPEC-OBJECT-TYPE-REF>_r4mV9MeLEeaixKR_9xPDcg</SPEC-OBJECT-TYPE-REF>
-          </TYPE>
-        </SPEC-OBJECT>
         <SPEC-OBJECT IDENTIFIER="_qD8E8MeMEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:54:21.327+01:00">
           <VALUES>
             <ATTRIBUTE-VALUE-STRING THE-VALUE="Hőmérséklet optimalizálása">
@@ -456,11 +444,6 @@
                       </CHILDREN>
                     </SPEC-HIERARCHY>
                   </CHILDREN>
-                </SPEC-HIERARCHY>
-                <SPEC-HIERARCHY IDENTIFIER="_WaVoIMeMEeaixKR_9xPDcg" LAST-CHANGE="2016-12-21T15:46:58.529+01:00">
-                  <OBJECT>
-                    <SPEC-OBJECT-REF>_WZsu8MeMEeaixKR_9xPDcg</SPEC-OBJECT-REF>
-                  </OBJECT>
                 </SPEC-HIERARCHY>
               </CHILDREN>
             </SPEC-HIERARCHY>
